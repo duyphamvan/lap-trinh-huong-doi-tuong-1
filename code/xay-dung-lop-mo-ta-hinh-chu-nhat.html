@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<canvas id="myCanvas" width="800px" height="400px" style="border:1px solid #d3d3d3;">
+	<div id="display"></div>
+		
+	</canvas>
+	<script>
+		function Retangle(length, wid) {
+			this.length = length;
+			this.wid = wid;
+			
+		}
+
+		Retangle.prototype.area = function () {
+				return this.length * this.wid ;
+		}
+
+		Retangle.prototype.perimeter = function () {
+				return (this.length + this.wid) * 2;
+			}
+
+
+		function createRetangle() {
+			var c = document.getElementById('myCanvas')
+			var ctx = c.getContext('2d');
+			var retangle = new Retangle(400, 200);
+			ctx.beginPath();
+			ctx.fillStyle = "blue";
+			ctx.rect(50, 50, retangle.length, retangle.wid);
+			ctx.stroke();
+			ctx.font = "20px Georgia";
+			ctx.fillText('Area is : ' + retangle.area() + ', ' + 'Perimeter is ' + retangle.perimeter(), 100, 100);
+		}
+		createRetangle();
+
+	</script>
+</body>
+</html>

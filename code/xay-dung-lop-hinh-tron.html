@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function Circle(radius, colors) {
+			this.radius = radius;
+			this.colors = colors;
+			this.getRadius = function () {
+				return radius;
+			};
+			this.getArea = function () {
+				return radius*radius*Math.PI
+			}
+		}
+		var circle = new Circle(2, 'blue');
+		alert('radius: ' + circle.getRadius() + '; area: ' + circle.getArea() + ' color is ' +circle.colors);
+	</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function Temperature(c) {
+			this.c = c;
+			this.f = function () {
+				return this.c * 1.8 + 32;
+			}
+			this.k = function () {
+				return this.c + 273.15;
+			}
+		}
+		var temperature = new Temperature(25);
+		var f = temperature.f();
+		var k = temperature.k();
+		alert('Fahrenheit is ' + f + ', ' + 'Kevin is ' + k);
+	</script>
+</body>
+</html>
